@@ -9,7 +9,9 @@ import Foundation
 import CoreMotion
 
 struct AccelerometerReader: View {
+    
     let motionManager = CMMotionManager()
+
     //variabile per verifcare se si è o meno in posizione di difesa
     @State private var isDefending = false
     @State private var maxTiltAngleDuringDefense: Double = 0.0
@@ -46,18 +48,21 @@ struct AccelerometerReader: View {
                 }
                 
                 // Effettua l'attacco se non si è in posizione di difesa e si rileva un affondo o un taglio
-                if acceleration.y > 1 {
+                if acceleration.y > 1.5 && abs(acceleration.x) < 1 {
                     print("ATTACCO: AFFONDO")
+                    return
                 }
                 
-                if acceleration.x > 1 || acceleration.x < -1 {
+                if acceleration.x > 1 {
                     print("ATTACCO: TAGLIO")
+                    return
                 }
             }
         } else {
             print("L'accelerometro non è disponibile.")
         }
     }
+
     
     func startMotionUpdates() {
         if motionManager.isDeviceMotionAvailable {
