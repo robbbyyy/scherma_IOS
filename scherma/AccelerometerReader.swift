@@ -7,17 +7,22 @@
 import SwiftUI
 import Foundation
 import CoreMotion
+import UIKit
+import AVFoundation
+
 
 struct AccelerometerReader: View {
     
     let motionManager = CMMotionManager()
-
+    @State var audioPlayer : AVAudioPlayer!
+    @State var count = 0
+    
     //variabile per verifcare se si è o meno in posizione di difesa
     @State private var isDefending = false
     @State private var maxTiltAngleDuringDefense: Double = 0.0
     @State private var showMessage = false
-
-
+    
+    
     var body: some View {
         VStack {
             if showMessage {
@@ -31,6 +36,7 @@ struct AccelerometerReader: View {
                 }
         }
     }
+    
     
     func startAccelerometerUpdates() {
         if motionManager.isAccelerometerAvailable {
@@ -47,22 +53,39 @@ struct AccelerometerReader: View {
                     return // Esci dalla funzione senza eseguire l'attacco
                 }
                 
+                
+                                
                 // Effettua l'attacco se non si è in posizione di difesa e si rileva un affondo o un taglio
                 if acceleration.y > 1.5 && abs(acceleration.x) < 1 {
                     print("ATTACCO: AFFONDO")
+                    UIImpactFeedbackGenerator(style: .heavy).impactOccurred() // Esegui la vibrazione quando viene eseguito l'affondo
                     return
                 }
                 
                 if acceleration.x > 1 {
                     print("ATTACCO: TAGLIO")
+                    playSound(sound: "draw-sword1-44724")
+                    UIImpactFeedbackGenerator(style: .heavy).impactOccurred() // Esegui la vibrazione quando viene eseguito l'affondo
                     return
                 }
+                
+                if acceleration.z > 1.5 {
+                    print("ATTACCO: FENDENTE")
+                }
+                
+                
+                if acceleration.y < -1.5 && count < 1{
+                    playSound(sound: "sword-slash")
+                    count += 1
+                }
+                
+
             }
         } else {
             print("L'accelerometro non è disponibile.")
         }
     }
-
+    
     
     func startMotionUpdates() {
         if motionManager.isDeviceMotionAvailable {
@@ -82,7 +105,7 @@ struct AccelerometerReader: View {
     }
     
     func handleDefenseLogic(attitude: CMAttitude) {
-        let defenseActivationThreshold: Double = 0.5 // Soglia di inclinazione (in radianti) per attivare la difesa permanente
+        let defenseActivationThreshold: Double = 1.25 // Soglia di inclinazione (in radianti) per attivare la difesa permanente
         let tiltAngle = attitude.pitch // Angolo di inclinazione rispetto all'asse desiderato
         
         if isDefending {
@@ -91,6 +114,7 @@ struct AccelerometerReader: View {
                 maxTiltAngleDuringDefense = tiltAngle
             }
         }
+        
         
         // Verifica se il telefono è in posizione di difesa permanente
         if abs(tiltAngle) > defenseActivationThreshold {
@@ -102,5 +126,26 @@ struct AccelerometerReader: View {
             print("Uscito dalla posizione di difesa!")
         }
     }
+    
+    func stopAccelerometerUpdates() {
+        if motionManager.isAccelerometerActive {
+            motionManager.stopAccelerometerUpdates()
+            print("Aggiornamenti dell'accelerometro fermati.")
+        }
+    }
+    
+    func stopMotionUpdates() {
+        if motionManager.isDeviceMotionActive {
+            motionManager.stopDeviceMotionUpdates()
+            print("Aggiornamenti del motion manager fermati.")
+        }
+    }
+    
+    func playSound(sound: String){
+        let url = Bundle.main.url(forResource: sound, withExtension: "mp3")
+        audioPlayer = try! AVAudioPlayer(contentsOf: url!)
+        audioPlayer!.play()
+    }
+    
 }
 

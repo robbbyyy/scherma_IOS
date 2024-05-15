@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		621735732BF49BC900E535E1 /* ListSwordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621735722BF49BC900E535E1 /* ListSwordsView.swift */; };
+		621735752BF49C2600E535E1 /* FightPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621735742BF49C2600E535E1 /* FightPage.swift */; };
+		621735782BF4BECC00E535E1 /* draw-sword1-44724.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 621735762BF4BECC00E535E1 /* draw-sword1-44724.mp3 */; };
+		6217357C2BF4D01D00E535E1 /* Lightsaber Sound Effect HQ - HD..mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6217357A2BF4D01D00E535E1 /* Lightsaber Sound Effect HQ - HD..mp3 */; };
+		6217357E2BF4D2EE00E535E1 /* sword-training.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6217357D2BF4D2EE00E535E1 /* sword-training.mp3 */; };
+		621735802BF4D9B600E535E1 /* sword-slash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6217357F2BF4D9B600E535E1 /* sword-slash.mp3 */; };
 		621D50702BEF753F00151718 /* schermaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621D506F2BEF753F00151718 /* schermaApp.swift */; };
 		621D50722BEF753F00151718 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621D50712BEF753F00151718 /* ContentView.swift */; };
 		621D50742BEF754000151718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 621D50732BEF754000151718 /* Assets.xcassets */; };
@@ -15,6 +21,7 @@
 		621D508B2BEF754000151718 /* schermaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621D508A2BEF754000151718 /* schermaUITests.swift */; };
 		621D508D2BEF754000151718 /* schermaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621D508C2BEF754000151718 /* schermaUITestsLaunchTests.swift */; };
 		621D509A2BEF763F00151718 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621D50992BEF763F00151718 /* ViewController.swift */; };
+		62450DF32BF4FA2800AAC232 /* PoetsenOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62450DF02BF4FA2700AAC232 /* PoetsenOne-Regular.ttf */; };
 		62CEB7192BF01EA400826CC5 /* AccelerometerReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CEB7182BF01EA400826CC5 /* AccelerometerReader.swift */; };
 		62CEB71B2BF0EAE000826CC5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CEB71A2BF0EAE000826CC5 /* User.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		621735722BF49BC900E535E1 /* ListSwordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSwordsView.swift; sourceTree = "<group>"; };
+		621735742BF49C2600E535E1 /* FightPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightPage.swift; sourceTree = "<group>"; };
+		621735762BF4BECC00E535E1 /* draw-sword1-44724.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "draw-sword1-44724.mp3"; sourceTree = "<group>"; };
+		6217357A2BF4D01D00E535E1 /* Lightsaber Sound Effect HQ - HD..mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lightsaber Sound Effect HQ - HD..mp3"; sourceTree = "<group>"; };
+		6217357D2BF4D2EE00E535E1 /* sword-training.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sword-training.mp3"; sourceTree = "<group>"; };
+		6217357F2BF4D9B600E535E1 /* sword-slash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sword-slash.mp3"; sourceTree = "<group>"; };
 		621D506C2BEF753F00151718 /* scherma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scherma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		621D506F2BEF753F00151718 /* schermaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schermaApp.swift; sourceTree = "<group>"; };
 		621D50712BEF753F00151718 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +61,8 @@
 		621D508A2BEF754000151718 /* schermaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schermaUITests.swift; sourceTree = "<group>"; };
 		621D508C2BEF754000151718 /* schermaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = schermaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		621D50992BEF763F00151718 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		62450DF02BF4FA2700AAC232 /* PoetsenOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PoetsenOne-Regular.ttf"; path = "../../Downloads/PoetsenOne-Regular.ttf"; sourceTree = "<group>"; };
+		62450DF42BF4FA5500AAC232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		62CEB7182BF01EA400826CC5 /* AccelerometerReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerReader.swift; sourceTree = "<group>"; };
 		62CEB71A2BF0EAE000826CC5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,9 +92,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		621735772BF4BECC00E535E1 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				6217357F2BF4D9B600E535E1 /* sword-slash.mp3 */,
+				6217357A2BF4D01D00E535E1 /* Lightsaber Sound Effect HQ - HD..mp3 */,
+				6217357D2BF4D2EE00E535E1 /* sword-training.mp3 */,
+				621735762BF4BECC00E535E1 /* draw-sword1-44724.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		621D50632BEF753F00151718 = {
 			isa = PBXGroup;
 			children = (
+				62450DF02BF4FA2700AAC232 /* PoetsenOne-Regular.ttf */,
 				621D506E2BEF753F00151718 /* scherma */,
 				621D507F2BEF754000151718 /* schermaTests */,
 				621D50892BEF754000151718 /* schermaUITests */,
@@ -100,11 +127,15 @@
 		621D506E2BEF753F00151718 /* scherma */ = {
 			isa = PBXGroup;
 			children = (
+				62450DF42BF4FA5500AAC232 /* Info.plist */,
+				621735772BF4BECC00E535E1 /* Sounds */,
 				62CEB71A2BF0EAE000826CC5 /* User.swift */,
 				62CEB7182BF01EA400826CC5 /* AccelerometerReader.swift */,
 				621D50992BEF763F00151718 /* ViewController.swift */,
 				621D506F2BEF753F00151718 /* schermaApp.swift */,
+				621735722BF49BC900E535E1 /* ListSwordsView.swift */,
 				621D50712BEF753F00151718 /* ContentView.swift */,
+				621735742BF49C2600E535E1 /* FightPage.swift */,
 				621D50732BEF754000151718 /* Assets.xcassets */,
 				621D50752BEF754000151718 /* Preview Content */,
 			);
@@ -240,6 +271,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				621735782BF4BECC00E535E1 /* draw-sword1-44724.mp3 in Resources */,
+				6217357E2BF4D2EE00E535E1 /* sword-training.mp3 in Resources */,
+				621735802BF4D9B600E535E1 /* sword-slash.mp3 in Resources */,
+				62450DF32BF4FA2800AAC232 /* PoetsenOne-Regular.ttf in Resources */,
+				6217357C2BF4D01D00E535E1 /* Lightsaber Sound Effect HQ - HD..mp3 in Resources */,
 				621D50772BEF754000151718 /* Preview Assets.xcassets in Resources */,
 				621D50742BEF754000151718 /* Assets.xcassets in Resources */,
 			);
@@ -267,7 +303,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				621D509A2BEF763F00151718 /* ViewController.swift in Sources */,
+				621735752BF49C2600E535E1 /* FightPage.swift in Sources */,
 				621D50722BEF753F00151718 /* ContentView.swift in Sources */,
+				621735732BF49BC900E535E1 /* ListSwordsView.swift in Sources */,
 				62CEB7192BF01EA400826CC5 /* AccelerometerReader.swift in Sources */,
 				62CEB71B2BF0EAE000826CC5 /* User.swift in Sources */,
 				621D50702BEF753F00151718 /* schermaApp.swift in Sources */,
@@ -437,6 +475,7 @@
 				DEVELOPMENT_TEAM = L9WMTQR2J4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = scherma/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -466,6 +505,7 @@
 				DEVELOPMENT_TEAM = L9WMTQR2J4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = scherma/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
