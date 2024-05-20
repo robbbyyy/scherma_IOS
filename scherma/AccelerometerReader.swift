@@ -21,6 +21,10 @@ struct AccelerometerReader: View {
     @State private var isDefending = false
     @State private var maxTiltAngleDuringDefense: Double = 0.0
     @State private var showMessage = false
+    @Binding   var isSoundOn :Bool
+    @Binding var soundFirst : String
+   
+    
     
     
     var body: some View {
@@ -41,7 +45,6 @@ struct AccelerometerReader: View {
     func startAccelerometerUpdates() {
         if motionManager.isAccelerometerAvailable {
             motionManager.accelerometerUpdateInterval = 0.1
-            
             motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
                 guard let acceleration = data?.acceleration else {
                     print("Errore nel rilevamento dell'accelerazione: \(error?.localizedDescription ?? "Errore sconosciuto")")
@@ -56,26 +59,29 @@ struct AccelerometerReader: View {
                 
                                 
                 // Effettua l'attacco se non si è in posizione di difesa e si rileva un affondo o un taglio
-                if acceleration.y > 1.5 && abs(acceleration.x) < 1 {
+               else  if acceleration.y > 1.5 && abs(acceleration.x) < 1 {
                     print("ATTACCO: AFFONDO")
                     UIImpactFeedbackGenerator(style: .heavy).impactOccurred() // Esegui la vibrazione quando viene eseguito l'affondo
                     return
                 }
                 
-                if acceleration.x > 1 {
+               else if acceleration.x > 1  {
                     print("ATTACCO: TAGLIO")
-                    playSound(sound: "draw-sword1-44724")
+                    print(isSoundOn)
+                    if isSoundOn {
+                        playSound(sound: soundFirst)}
                     UIImpactFeedbackGenerator(style: .heavy).impactOccurred() // Esegui la vibrazione quando viene eseguito l'affondo
                     return
                 }
                 
-                if acceleration.z > 1.5 {
+             else   if acceleration.z > 1.5 {
                     print("ATTACCO: FENDENTE")
                 }
                 
                 
-                if acceleration.y < -1.5 && count < 1{
-                    playSound(sound: "sword-slash")
+              else  if acceleration.y < -1.5 && count < 1{
+                    if isSoundOn{
+                        playSound(sound: "sword-slash")}
                     count += 1
                 }
                 

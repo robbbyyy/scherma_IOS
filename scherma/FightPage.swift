@@ -8,18 +8,26 @@
 import Foundation
 import SwiftUI
 
-struct FightPage : View {
-    @State private var accelerometerReader = AccelerometerReader()
+
+struct FightPage: View {
+    @AppStorage("isSoundOn") private var isSoundOn = true
+    @AppStorage("soundFirst") private var soundFirst : String = ""
     var body: some View {
-        Text("SEARCH ")
-        accelerometerReader
-            .font(.system(size: 35))
-            .onDisappear {
-                self.accelerometerReader.stopAccelerometerUpdates()
-                self.accelerometerReader.stopMotionUpdates()
-            }
+        let accelerometerReader = AccelerometerReader(isSoundOn: $isSoundOn, soundFirst: $soundFirst) // Correct initialization
+        
+        return VStack {
+            Text("SEARCH ")
+            accelerometerReader
+                .font(.system(size: 35))
+                .onDisappear {
+                    accelerometerReader.stopAccelerometerUpdates()
+                    accelerometerReader.stopMotionUpdates()
+                }
+        }
     }
 }
+
+
 
 #Preview {
     FightPage()
